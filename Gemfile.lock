@@ -76,6 +76,10 @@ GEM
     debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -159,6 +163,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    stripe (8.5.0)
     thor (1.2.1)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -183,6 +188,7 @@ PLATFORMS
 DEPENDENCIES
   cssbundling-rails
   debug
+  dotenv-rails
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
@@ -191,6 +197,7 @@ DEPENDENCIES
   redis (~> 4.0)
   sprockets-rails
   stimulus-rails
+  stripe
   turbo-rails
   tzinfo-data
   web-console
