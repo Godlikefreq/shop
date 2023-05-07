@@ -1,10 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
+<h1 class="text-center mb-3"><%= @product %></h1>
+
 <%= render @product %>
 
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
+<div class="text-center mt-3">
+  <%= link_to "Back to products", products_path, class: "btn btn-secondary" %>
 </div>

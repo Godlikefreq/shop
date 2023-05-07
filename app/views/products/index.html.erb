@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
+<div class="text-center">
+  <h1 class="mx-1">Products</h1>
+</div>
 
-<div id="products">
+<div class="mt-2" id="products">
   <% @products.each do |product| %>
     <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New product", new_product_path %>
+<div class="text-center">
+  <%= link_to "Create new product", new_product_path, class: "btn btn-success mt-3" %>
+</div>
