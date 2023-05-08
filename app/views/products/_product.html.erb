@@ -1,6 +1,6 @@
 <div class="row justify-content-center mx-2 mt-1 text-center" id="<%= dom_id product %>">
   <div class="col-1 text-end">
-    <%= link_to "Buy!", checkout_create_path, params: {id: product.id}, remote: true, data: { turbo_method: :post },
+    <%= button_to "Buy!", checkout_create_path, params: {id: product.id}, remote: true, data: { turbo: false },
                   class: "btn btn-success" %>
   </div>
 
