@@ -8,7 +8,7 @@ class WebhooksController < ApplicationController
 
     begin
       event = Stripe::Webhook.construct_event(
-        payload, sig_header, ENV["STRIPE_WEBHOOKS_KEY"]
+        payload, sig_header, ENV["STRIPE_WEBHOOKS_KEY"].to_s
       )
     rescue JSON::ParserError => e
       puts "Signature error"
