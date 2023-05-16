@@ -6,9 +6,11 @@ class WebhooksController < ApplicationController
     sig_header = request.env["HTTP_STRIPE_SIGNATURE"]
     event = nil
 
+    binding.b
+
     begin
       event = Stripe::Webhook.construct_event(
-        payload, sig_header, ENV["STRIPE_WEBHOOKS_KEY"].to_s
+        payload, sig_header, ENV["STRIPE_WEBHOOKS_KEY"]
       )
     rescue JSON::ParserError => e
       puts "Signature error"
