@@ -6,7 +6,7 @@ class WebhooksController < ApplicationController
     sig_header = request.env["HTTP_STRIPE_SIGNATURE"]
     event = nil
 
-    binding.b
+    binding.remote_pry
 
     begin
       event = Stripe::Webhook.construct_event(
