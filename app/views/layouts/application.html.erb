@@ -22,15 +22,38 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="<%= products_path %>">Products</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "Profile", current_user.email, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Log out", destroy_user_session_path,
+                            data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?" }, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
     </nav>
 
     <div class="container">
+      <div class="row justify-content-center mt-2">
+        <div class="col-12">
+          <% flash.each do |key, value| %>
+            <div class="<%= flash_class(key) %> alert-dismissible">
+              <%= value %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          <% end %>
+        </div>
+
       <%= yield %>
     </div>
   </body>
