@@ -1,3 +1,4 @@
+<h1>Success</h1>
 <% @session = Stripe::Checkout::Session.retrieve(params[:session_id]) %>
 <%= @session.payment_intent %>
 <%= Stripe::PaymentIntent.retrieve(@session.payment_intent) %>
